@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    environment {
+        PROJECT_DIR = "C:\\Users\\Pavitra\\OneDrive\\Desktop\\digitalxc\\Python_Automation"
+        REPO_URL = "https://github.com/pmb098/Automation.git"
+        PYTHON_VERSION = "python"
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                script {
+                    echo "Cloning the GitHub repository..."
+                    bat "rd /s /q \"${PROJECT_DIR}\" || echo 'No previous directory to delete'"
+                    bat "git clone ${REPO_URL} \"${PROJECT_DIR}\""
+                }
+            }
+        }
+
+        stage('Run Python Scripts') {
+            steps {
+                script {
+                    echo "Running all Python scripts..."
+                    bat "cd /d \"${PROJECT_DIR}\" && for %%F in (*.py) do ${PYTHON_VERSION} %%F"
+                }
+            }
+        }
+
+        stage('Post-Build Cleanup') {
+            steps {
+                script {
+                    echo "Cleaning up workspace..."
+                    bat "rd /s /q \"${PROJECT_DIR}\""
+                }
+            }
+        }
+    }
+}
