@@ -8,8 +8,8 @@ import time
 
 sender_email ='pavitramb098@gmail.com'
 
-password ='Temenos@1998'
-receiver_email ='pavitramb321@gmail.com'
+password ='Tijdhnh@123'
+receiver_email ='abcedhdgjj123@gmail.com'
 
 subject = 'Automated mail'
 print("3")
