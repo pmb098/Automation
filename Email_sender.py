@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import time
 
-sender_email ='pavitramb098@gmail.com'
+sender_email ='pavi123456789@gmail.com'
 
 password ='Tijdhnh@123'
 receiver_email ='abcedhdgjj123@gmail.com'
